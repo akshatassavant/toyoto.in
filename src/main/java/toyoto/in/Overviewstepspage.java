@@ -1,9 +1,19 @@
 package toyoto.in;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class Overviewstepspage {
+	
+
+WebDriver driver;
+
+public Overviewstepspage(WebDriver driver) {
+    this.driver = driver;
+    PageFactory.initElements(driver, this);
+}
 	 @FindBy(xpath = "(//span[contains(.,'Make your choices')])[1]")
 	 public WebElement lnk_makeyourchoice;
 	 

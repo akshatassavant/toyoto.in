@@ -1,11 +1,20 @@
 package toyoto.in;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class BuyPage {
-	 @FindBy(xpath = "//a[@class='nav-link navbar-toggle'][contains(.,'Models')]")
-	 public WebElement lnk_models;
+
+WebDriver driver;
+	public BuyPage(WebDriver driver) {
+	    this.driver = driver;
+	    PageFactory.initElements(driver, this);
+	}
+
+	@FindBy(xpath = "//a[@class='nav-link navbar-toggle'][contains(.,'Models')]")
+	public WebElement lnk_models;
 	 
 	 @FindBy(xpath = "(//p[contains(.,'Buy Online')])[23]")
 	 public WebElement lnk_buyonline;

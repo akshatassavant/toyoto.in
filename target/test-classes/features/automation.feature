@@ -4,7 +4,7 @@ Feature: Visit Toyoto
 
 @toyoto
   Scenario Outline: Purchase Toyoto car
-    Given user navigates to toyoto car website
+    #Given user navigates to toyoto car website
     Then click on Moduls menu
     And click on Buy Online from list of cars
     And click on Configure & Buy button

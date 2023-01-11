@@ -1,17 +1,22 @@
 package stepdefination;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
 import io.cucumber.java.en.Then;
+import junit.framework.Assert;
 import toyoto.in.*;
 
-public class Test_step_defination_overviewstep {
-	
-	Overviewstepspage Overviewstepspage;
+public class Test_step_defination_overviewstep extends BasePage {
+	WebDriver driver;
+	Overviewstepspage Overviewstepspage=new Overviewstepspage(driver);
 
 	@Then("validate the product is added to the cart")
 	public void validate_the_product_is_added_to_the_cart() {
-		
+		driver.findElement(By.xpath("//img[@alt='Shopping Cart']")).click();
+		Assert.assertEquals("2.5L CAMRY 2023", driver.findElement(By.xpath("(//div[contains(.,'2.5L CAMRY 2023')])[22]")));
 	}
 
 	@Then("click on Make your choices button and choose {string} and {string}")
